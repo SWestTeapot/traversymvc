@@ -6,10 +6,16 @@ class Pages extends Controller {
     }
 
     public function index(){
+
+        $posts = $this->postModel->getPosts();
+
         $data = [
-            'title' => 'Welcome'
+            'title' => 'Welcome',
+            'posts' => $posts
         ];
        $this->view('pages/index', $data);
+
+       
     }
 
     public function about(){
